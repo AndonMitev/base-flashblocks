@@ -55,7 +55,7 @@ const FlashblocksBanner: React.FC<FlashblocksBannerProps> = ({
             </h3>
             <p className='text-xs text-blue-100/90 mt-1 leading-relaxed'>
               Experience 10x faster block times than any other EVM chain with
-              Base's revolutionary Flashblocks technology.
+              Base&apos;s revolutionary Flashblocks technology.
             </p>
           </div>
         </div>

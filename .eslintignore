@@ -1,0 +1,15 @@
+# Build output
+.next/
+out/
+
+# Node modules
+node_modules/
+
+# Cache
+.eslintcache
+
+# Public assets
+public/
+
+# Generated types
+next-env.d.ts 
