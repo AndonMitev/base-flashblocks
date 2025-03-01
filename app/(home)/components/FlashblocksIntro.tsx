@@ -1,6 +1,6 @@
 import React from 'react';
 import FlashblocksHeader from './FlashblocksHeader';
-import FlashblocksBanner from './shared/FlashblocksBanner';
+import FlashblocksBanner from './FlashblocksBanner';
 
 const FlashblocksIntro: React.FC = () => {
   return (

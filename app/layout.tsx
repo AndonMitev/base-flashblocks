@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     images: ['/base-logo.png'],
     creator: '@flashblock'
   },
-  viewport: 'width=device-width, initial-scale=1',
   themeColor: '#000000',
   category: 'Technology',
   icons: {
