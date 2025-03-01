@@ -1,6 +1,6 @@
 'use client';
 
-import { useCoinbaseWallet } from '@/components/Providers/Coinbase';
+import { useCoinbaseWallet } from '@/components/providers/CoinbaseWalletProvider';
 
 export function ConnectButton() {
   const {

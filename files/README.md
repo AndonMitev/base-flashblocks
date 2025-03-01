@@ -30,9 +30,11 @@ This project documentation is split into several focused files for easier refere
 - **Simplicity Over Complexity**: Build with precision, implementing exactly what is required
 - Next.js App Router with React 19
 - Separation of concerns: services → actions → components
+- Prefer server components over client components when possible
 - Server-only code with 'server-only' imports
 - Server actions with 'use server' directives
-- React Query for client-side data fetching
+- Use 'after' from 'next/server' for background tasks
+- React Query for ALL client-side data fetching (direct action calls not allowed)
 - Formatter functions only used in components
 - All server exports must be async functions
 - Client services must be implemented as singleton classes

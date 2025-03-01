@@ -42,10 +42,11 @@ export function CoinbaseWalletProvider({ children }: { children: ReactNode }) {
   const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState<Address | null>(null);
   const [subAccount, setSubAccount] = useState<string | null>(null);
+
+  // Initialize Coinbase Wallet SDK
   useEffect(() => {
-    // Initialize Coinbase Wallet SDK
     const coinbaseWalletSDK = createCoinbaseWalletSDK({
-      appName: 'Coinbase Wallet demo',
+      appName: 'Base subaccounts showcase',
       appChainIds: [baseSepolia.id],
       preference: {
         options: 'smartWalletOnly',
@@ -58,6 +59,7 @@ export function CoinbaseWalletProvider({ children }: { children: ReactNode }) {
     setProvider(coinbaseWalletSDK.getProvider());
   }, []);
 
+  // Initialize Wallet Client
   const walletClient = useMemo(() => {
     if (!provider) return null;
     return createWalletClient({
@@ -98,9 +100,7 @@ export function CoinbaseWalletProvider({ children }: { children: ReactNode }) {
     }
 
     const signer = await getCryptoKeyAccount();
-    console.log('provider', provider);
-    console.log('address', address);
-    console.log('signer', signer);
+
     const walletConnectResponse = (await provider.request({
       method: 'wallet_connect',
       params: [
@@ -132,7 +132,6 @@ export function CoinbaseWalletProvider({ children }: { children: ReactNode }) {
       }[];
     };
 
-    console.log('walletConnectResponse', walletConnectResponse);
     const { addSubAccount } = walletConnectResponse.accounts[0].capabilities;
     const subAccount = addSubAccount.address;
     setSubAccount(subAccount);

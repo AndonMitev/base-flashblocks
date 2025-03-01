@@ -1,7 +1,12 @@
 'use client';
 
-import { CoinbaseWalletProvider } from './Coinbase';
+import { CoinbaseWalletProvider } from './CoinbaseWalletProvider';
+import { QueryProvider } from './QueryProvider';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  return <CoinbaseWalletProvider>{children}</CoinbaseWalletProvider>;
+  return (
+    <CoinbaseWalletProvider>
+      <QueryProvider>{children}</QueryProvider>
+    </CoinbaseWalletProvider>
+  );
 }
